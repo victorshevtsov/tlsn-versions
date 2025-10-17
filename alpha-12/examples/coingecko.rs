@@ -114,7 +114,7 @@ async fn notarize(uri: &str) -> Result<(), Box<dyn std::error::Error>> {
 
     // Build a simple HTTP request with common headers.
     let request_builder = Request::builder()
-        .version(hyper::Version::HTTP_10)
+        // .version(hyper::Version::HTTP_10) // Attempt to let the server know don't want a chunked response
         .uri(uri)
         .header("Host", server_host)
         .header("Accept", "*/*")
