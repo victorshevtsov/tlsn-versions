@@ -122,7 +122,6 @@ async fn prover<S: AsyncWrite + AsyncRead + Send + Sync + Unpin + 'static>(
 
     // Build a simple HTTP request with common headers.
     let request_builder = Request::builder()
-        .version(hyper::Version::HTTP_10) // Attempt to let the server know we don't want a chunked response
         .uri(uri)
         .header("Host", SERVER_DOMAIN)
         .header("Accept", "*/*")
